@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b54ur060qwvhu"]
+
+[ext_resource type="PackedScene" uid="uid://b7q3dicskk8e4" path="res://AnimationTest/node_2d.tscn" id="1_k37dv"]
+
+[node name="Window" type="Window"]
+position = Vector2i(100, 200)
+size = Vector2i(300, 300)
+mode = 1
+
+[node name="Node2D" parent="." instance=ExtResource( "1_k37dv" )]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwloig1orwyts"]
+
+[ext_resource type="Script" path="res://CyclicTest/CyclicAAA.gd" id="1_54v21"]
+[ext_resource type="Script" path="res://CyclicTest/CyclicBBB.gd" id="2_rk3v1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CyclicAAA" type="Node" parent="."]
+script = ExtResource( "1_54v21" )
+
+[node name="CyclicBBB" type="Node" parent="."]
+script = ExtResource( "2_rk3v1" )

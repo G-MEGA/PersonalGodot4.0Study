@@ -1,0 +1,196 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="Texture2D" uid="uid://dcuo44x13hc6u" path="res://icon.png" id="1_rgqmn"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_yh0i4"]
+sync = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ydifk"]
+animation = &"x"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uvvc6"]
+animation = &"x2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7ehcr"]
+auto_advance = true
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7ayww"]
+auto_advance = true
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1fci6"]
+states/x/node = SubResource( "AnimationNodeAnimation_ydifk" )
+states/x/position = Vector2(446, 348)
+states/x2/node = SubResource( "AnimationNodeAnimation_uvvc6" )
+states/x2/position = Vector2(789, 306)
+transitions = [&"x", &"x2", SubResource( "AnimationNodeStateMachineTransition_7ehcr" ), &"x2", &"x", SubResource( "AnimationNodeStateMachineTransition_7ayww" )]
+start_node = "x"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pctgy"]
+animation = &"y"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_se3ks"]
+states/y/node = SubResource( "AnimationNodeAnimation_pctgy" )
+states/y/position = Vector2(370, 67)
+start_node = "y"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_5l6cm"]
+graph_offset = Vector2(-741.867, -4.53281)
+nodes/Add2/node = SubResource( "AnimationNodeAdd2_yh0i4" )
+nodes/Add2/position = Vector2(-220, 160)
+nodes/StateMachine/node = SubResource( "AnimationNodeStateMachine_se3ks" )
+nodes/StateMachine/position = Vector2(-540, 20)
+"nodes/StateMachine 2/node" = SubResource( "AnimationNodeStateMachine_1fci6" )
+"nodes/StateMachine 2/position" = Vector2(-540, 260)
+nodes/output/position = Vector2(80, 140)
+node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"StateMachine", &"Add2", 1, &"StateMachine 2"]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_c840m"]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_2mac0"]
+
+[sub_resource type="Animation" id="Animation_oqx17"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Icon:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_i4mol"]
+resource_name = "test"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"points": PackedFloat32Array(14, -0.25, 0, 0.25, 0, 1, 114, -0.25, 0, 0.25, 0, 1),
+"times": PackedFloat32Array(0.2, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"points": PackedFloat32Array(87, -0.25, 0, 0.25, 0, 1, -2, -0.25, 0, 0.25, 0, 1),
+"times": PackedFloat32Array(0.2, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"points": PackedFloat32Array(140, -0.249955, -2.49954, 0.3, 3, 1, 107, -0.132189, -12.5579, 0.2, 19, 1, 0, -0.25, 0, 0.25, 0, 1),
+"times": PackedFloat32Array(0.2, 0.6, 1)
+}
+
+[sub_resource type="Animation" id="Animation_vapgn"]
+resource_name = "x"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qutq1"]
+resource_name = "x2"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1024, 0), Vector2(1024, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7g8ar"]
+resource_name = "y"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(507, 500), Vector2(507, 500)]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( "AnimationNodeBlendTree_5l6cm" )
+anim_player = NodePath("../AnimationPlayer")
+parameters/Add2/add_amount = 1.0
+parameters/StateMachine/playback = SubResource( "AnimationNodeStateMachinePlayback_c840m" )
+"parameters/StateMachine 2/playback" = SubResource( "AnimationNodeStateMachinePlayback_2mac0" )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( "Animation_oqx17" )
+anims/test = SubResource( "Animation_i4mol" )
+anims/x = SubResource( "Animation_vapgn" )
+anims/x2 = SubResource( "Animation_qutq1" )
+anims/y = SubResource( "Animation_7g8ar" )
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource( "1_rgqmn" )

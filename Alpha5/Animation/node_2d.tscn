@@ -1,0 +1,187 @@
+[gd_scene load_steps=15 format=3 uid="uid://b6rhbn26y3fu1"]
+
+[ext_resource type="Texture2D" uid="uid://ylq1glg2uaha" path="res://icon.png" id="1_l3ine"]
+[ext_resource type="Script" path="res://Animation/AnimPlay.gd" id="2_n8fpl"]
+[ext_resource type="Script" path="res://Animation/SkeletonCtrl.gd" id="3_sq0s3"]
+[ext_resource type="Script" path="res://Animation/FixedPhysicalBone2D.gd" id="4_ocdbl"]
+
+[sub_resource type="Animation" id="Animation_ff1lt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Bone2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer2/Icon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/Bone2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wsqh6"]
+resource_name = "새 애니메이션"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Bone2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.785398]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer2/Icon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/Bone2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="SkeletonModification2DPhysicalBones" id="SkeletonModification2DPhysicalBones_y01op"]
+fetch_bones = null
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_fmwes"]
+enabled = true
+modification_count = 4
+modifications/0 = SubResource( "SkeletonModification2DPhysicalBones_y01op" )
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhg0u"]
+size = Vector2(64.9075, 20.0693)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ka4jm"]
+size = Vector2(20.1308, 48.4623)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t56fi"]
+friction = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oni24"]
+radius = 76.3217
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hd1gp"]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxnfl"]
+size = Vector2(1117, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( "Animation_ff1lt" )
+"anims/새 애니메이션" = SubResource( "Animation_wsqh6" )
+script = ExtResource( "2_n8fpl" )
+
+[node name="Icon" type="Sprite2D" parent="AnimationPlayer2"]
+position = Vector2(223, 25)
+texture = ExtResource( "1_l3ine" )
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2(562, 314)
+modification_stack = SubResource( "SkeletonModificationStack2D_fmwes" )
+script = ExtResource( "3_sq0s3" )
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
+scale = Vector2(0.999848, 0.999848)
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Bone2D2" type="Bone2D" parent="Skeleton2D/Bone2D"]
+position = Vector2(63, 11)
+rest = Transform2D(1, 0, 0, 1, 63, 11)
+
+[node name="Icon4" type="Sprite2D" parent="Skeleton2D/Bone2D/Bone2D2"]
+position = Vector2(-1, 23.4733)
+scale = Vector2(0.328401, 0.82896)
+texture = ExtResource( "1_l3ine" )
+
+[node name="Icon3" type="Sprite2D" parent="Skeleton2D/Bone2D"]
+position = Vector2(33.9999, 7)
+rotation = -1.309
+scale = Vector2(0.328401, 1.09542)
+texture = ExtResource( "1_l3ine" )
+
+[node name="PhysicalBone2D" type="PhysicalBone2D" parent="Skeleton2D"]
+scale = Vector2(0.999848, 0.999848)
+bone2d_nodepath = NodePath("../Bone2D")
+bone2d_index = 0
+script = ExtResource( "4_ocdbl" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/PhysicalBone2D"]
+position = Vector2(33.0051, 7.00107)
+rotation = 0.261799
+shape = SubResource( "RectangleShape2D_fhg0u" )
+
+[node name="PhysicalBone2D2" type="PhysicalBone2D" parent="Skeleton2D/PhysicalBone2D"]
+position = Vector2(63, 11)
+bone2d_nodepath = NodePath("../../Bone2D/Bone2D2")
+bone2d_index = 1
+script = ExtResource( "4_ocdbl" )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D/PhysicalBone2D/PhysicalBone2D2"]
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/PhysicalBone2D/PhysicalBone2D2"]
+position = Vector2(-0.990603, 23.0052)
+shape = SubResource( "RectangleShape2D_ka4jm" )
+
+[node name="RigidDynamicBody2D" type="RigidDynamicBody2D" parent="."]
+position = Vector2(507, 468)
+physics_material_override = SubResource( "PhysicsMaterial_t56fi" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidDynamicBody2D"]
+position = Vector2(-13, -90)
+shape = SubResource( "CircleShape2D_oni24" )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(545, 482)
+physics_material_override = SubResource( "PhysicsMaterial_hd1gp" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-141.5, 0)
+shape = SubResource( "RectangleShape2D_uxnfl" )

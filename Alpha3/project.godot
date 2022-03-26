@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Node",
+"class": &"CyclicAAA",
+"language": &"GDScript",
+"path": "res://CyclicTest/CyclicAAA.gd"
+}, {
+"base": "Node",
+"class": &"CyclicBBB",
+"language": &"GDScript",
+"path": "res://CyclicTest/CyclicBBB.gd"
+}]
+_global_script_class_icons={
+"CyclicAAA": "",
+"CyclicBBB": ""
+}
+
+[application]
+
+config/name="Alpha3"
+config/icon="res://icon.png"
+config/features=PackedStringArray("4.0", "Vulkan Clustered")
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"button_mask":1,"position":Vector2(216, 132),"global_position":Vector2(216, 132),"factor":1.0,"button_index":1,"pressed":true,"double_click":false,"script":null)
+]
+}

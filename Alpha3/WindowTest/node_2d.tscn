@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d5hqmffw5jnd"]
+
+[ext_resource type="Script" path="res://WindowTest/WindowTest.gd" id="1_a4uid"]
+[ext_resource type="PackedScene" uid="uid://b54ur060qwvhu" path="res://WindowTest/Window.tscn" id="2_rtbej"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( "1_a4uid" )
+window = ExtResource( "2_rtbej" )

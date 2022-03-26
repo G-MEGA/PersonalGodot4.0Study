@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8rai7mnl68um"]
+
+[ext_resource type="Script" path="res://ArrayTest/new_script.gd" id="1_63spw"]
+[ext_resource type="Texture2D" uid="uid://dcuo44x13hc6u" path="res://icon.png" id="2_l6gs0"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( "1_63spw" )
+a = [NodePath(""), NodePath("")]
+ccc = []
+
+[node name="%%" type="CollisionShape2D" parent="."]
+
+[node name="!!" type="CanvasModulate" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(289, 188)
+texture = ExtResource( "2_l6gs0" )
