@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcyr61sfo2gb1"]
+
+[sub_resource type="GDScript" id="GDScript_kh50q"]
+resource_name = "aaaa"
+script/source = "@tool
+extends Node2D
+
+@export
+var a:Curve:
+	get:
+		return a
+	set(value):
+		a = value
+		if is_instance_valid(a):
+			a.connect(\"changed\",a_changed)
+
+func a_changed():
+	print(\"a changed\")
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	print(\"tool3\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="Curve" id="Curve_gqtmj"]
+min_value = 0.15
+max_value = 0.96
+_data = [Vector2(0.11811, 0.584454), 0.0, 0.0, 0, 0, Vector2(0.464567, 0.798), 0.0, 0.0, 0, 0, Vector2(0.877953, 0.466636), 0.0, 0.0, 0, 0]
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( "GDScript_kh50q" )
+a = SubResource( "Curve_gqtmj" )

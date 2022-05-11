@@ -9,12 +9,18 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "AnimationNode",
+"class": &"AnimationNodeOverride2",
+"language": &"GDScript",
+"path": "res://CustomAnimationNodeTest/AnimationNodeOverride2.gd"
+}, {
 "base": "PhysicalBone2D",
 "class": &"FixedPhysicalBone2D",
 "language": &"GDScript",
-"path": "res://Animation/FixedPhysicalBone2D.gd"
+"path": "res://PhysicalBoneTest/FixedPhysicalBone2D.gd"
 }]
 _global_script_class_icons={
+"AnimationNodeOverride2": "",
 "FixedPhysicalBone2D": ""
 }
 

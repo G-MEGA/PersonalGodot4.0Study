@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6rhbn26y3fu1"]
+[gd_scene load_steps=15 format=3 uid="uid://1uk2imcp82ns"]
 
 [ext_resource type="Texture2D" uid="uid://ylq1glg2uaha" path="res://icon.png" id="1_l3ine"]
-[ext_resource type="Script" path="res://Animation/AnimPlay.gd" id="2_n8fpl"]
-[ext_resource type="Script" path="res://Animation/SkeletonCtrl.gd" id="3_sq0s3"]
-[ext_resource type="Script" path="res://Animation/FixedPhysicalBone2D.gd" id="4_ocdbl"]
+[ext_resource type="Script" path="res://PhysicalBoneTest/AnimPlay.gd" id="2_n8fpl"]
+[ext_resource type="Script" path="res://PhysicalBoneTest/SkeletonCtrl.gd" id="3_sq0s3"]
+[ext_resource type="Script" path="res://PhysicalBoneTest/FixedPhysicalBone2D.gd" id="4_ocdbl"]
 
 [sub_resource type="Animation" id="Animation_ff1lt"]
 length = 0.001
@@ -89,7 +89,7 @@ fetch_bones = null
 
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_fmwes"]
 enabled = true
-modification_count = 4
+modification_count = 5
 modifications/0 = SubResource( "SkeletonModification2DPhysicalBones_y01op" )
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhg0u"]

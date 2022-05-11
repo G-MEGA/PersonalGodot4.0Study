@@ -1,0 +1,6 @@
+[gd_resource type="AnimationNode" load_steps=2 format=3 uid="uid://bt673kuq48e3s"]
+
+[ext_resource type="Script" path="res://CustomAnimationNodeTest/AnimationNodeOverride2.gd" id="1_qma6q"]
+
+[resource]
+script = ExtResource( "1_qma6q" )
